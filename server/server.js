@@ -2,10 +2,12 @@ const { Socket } = require('socket.io')
 const mongoose = require("mongoose")
 const Document= require("./Document")
 
-mongoose.connect('mongodb+srv://somnath:Tripathi420@cluster0.iuolijq.mongodb.net/?retryWrites=true&w=majority')
-.then( () => console.log("mongodb connected"));
+const PORT = process.env.PORT || 3001;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-const io = require('socket.io')(3001, {
+mongoose.connect(MONGODB_URI, {  });
+
+const io = require('socket.io')(PORT, {
     cors: {
         origin: 'https://google-docs-clone-ten-fawn.vercel.app',
         methods: ['GET', 'POST'],
