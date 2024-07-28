@@ -23,7 +23,7 @@ export default function TextEditot() {
   
 
   useEffect(() => {
-    const s = io("http://localhost:3001");
+    const s = io("https://nexus-backend-cvxi.onrender.com");
     setSocket(s)
 
     return () => {
